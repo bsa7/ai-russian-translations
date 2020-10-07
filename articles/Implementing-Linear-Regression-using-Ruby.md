@@ -1,6 +1,6 @@
 Источник: https://www.practicalai.io/implementing-linear-regression-using-ruby/
 
-## Реализация линейной регрессии[*]() с использованием языка Ruby
+## Реализация линейной регрессии[*](../foot-notes/terminology.md#linear-regression) с использованием языка Ruby
 11.06.2017 автор Soren D
 
 В этой статье я покажу, как реализовать линейную регрессию на Ruby.
@@ -13,7 +13,7 @@
 Как сказано выше, мы будем реализовывать алгоритм машинного обучения для предсказания цен на жилые дома в районе Статен Айленд, основываясь на исторических данных. Для получения исторических данных мы будем использовать [открытый портал данных Нью Йорка](https://opendata.cityofnewyork.us/). Нью Йорк создал прекрасную программу, которая делает данные города доступными для любого желающего.
 Эти данные послужат основанием для нашей реализации.
 
-Специфичным для нашей реализации будет то, что мы будем использовать[ежегодно обновляемый набор данных о продажах](https://data.cityofnewyork.us/Housing-Development/Annualized-Rolling-Sales-Update/uzf5-f8n2). Я удалил сильно отличающиеся строки из датасета и отсортировал данные в CSV файле, который выглядит примерно так:
+Специфичным для нашей реализации будет то, что мы будем использовать [ежегодно обновляемый набор данных о продажах](https://data.cityofnewyork.us/Housing-Development/Annualized-Rolling-Sales-Update/uzf5-f8n2). Я удалил сильно отличающиеся строки из датасета и отсортировал данные в CSV файле, который выглядит примерно так:
 
 ```csv
 LAND SQUARE FEET,GROSS SQUARE FEET,SALE PRICE,BOROUGH,NEIGHBORHOOD,TAX CLASS AT PRESENT,BLOCK,LOT,EASE-MENT,BUILDING CLASS AT PRESENT,ZIP CODE,YEAR BUILT,TAX CLASS AT TIME OF SALE,BUILDING CLASS AT TIME OF SALE,SALE DATE
@@ -26,8 +26,8 @@ LAND SQUARE FEET,GROSS SQUARE FEET,SALE PRICE,BOROUGH,NEIGHBORHOOD,TAX CLASS AT 
 
 Первые три колонки представляют для нас наибольший интерес, это: площадь участка в квадратных футах, жилая площадь и цена продажи.
 
-![Пример регрессии 1 >](../foot-notes/images/linear-regression-example-02.png)
-![Пример регрессии 2 >](../foot-notes/images/linear-regression-example-03.png)
+![Пример регрессии 1 >](../assets/images/linear-regression-example-02.png)
+![Пример регрессии 2 >](../assets/images/linear-regression-example-03.png)
 
 Для лучшего понимания связи между площадью участка, жилой площадью и ценой я создал два графика точек, показывающих отношение жилой площади к цене и отношение площади участка к цене.
 

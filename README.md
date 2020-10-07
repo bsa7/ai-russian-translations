@@ -2,4 +2,5 @@
 
 ## Оглавление
 
-* [Implementing Linear Regression using Ruby](articles/Implementing-Linear-Regression-using-Ruby.md)
+* [Реализация линейной регрессии на Ruby](articles/Implementing-Linear-Regression-using-Ruby.md)
+* [Реализация логистической регрессии на Ruby](articles/Implementing-Classification-using-Logistic-Regression-in-Ruby.md)

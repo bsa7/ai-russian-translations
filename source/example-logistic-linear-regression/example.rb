@@ -5,7 +5,7 @@ x_data = []
 y_data = []
 
 # Загружаем данные из CSV файла в два массива. Первый - независимые переменные X и второй массив - переменные Y, зависящие от X.
-file_name = './data/admission.csv'
+file_name = '../common-data/data/admission.csv'
 CSV.foreach(file_name, :headers => false) do |row|
   x_data.push( [row[0].to_f, row[1].to_f] )
   y_data.push( row[2].to_i )

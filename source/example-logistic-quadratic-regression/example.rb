@@ -4,7 +4,7 @@ require 'liblinear'
 x_data = []
 y_data = []
 # Загрузка данных из CSV файла в два массива. Первый массив для независимой переменной X и второй - для зависимой переменной Y
-CSV.foreach('./data/admission.csv', headers: false) do |row|
+CSV.foreach('../common-data/admission.csv', headers: false) do |row|
   x_data.push([row[0].to_f, row[0].to_f ** 2, row[1].to_f, row[1].to_f ** 2, row[1].to_f * row[0].to_f])
   y_data.push(row[2].to_i)
 end

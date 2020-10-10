@@ -1,6 +1,6 @@
 Источник: https://www.practicalai.io/implementing-linear-regression-using-ruby/
 
-## Реализация линейной регрессии[*](../foot-notes/terminology.md#linear-regression) с использованием языка Ruby
+## Реализация линейной регрессии[*](../foot-notes/terminology.md#линейная-регрессия) с использованием языка Ruby
 11.06.2017 автор Soren D
 
 В этой статье я покажу, как реализовать линейную регрессию на Ruby.
@@ -106,6 +106,12 @@ puts [
 
 ```bash
 $ ruby example.rb
-Predicted selling price for a 1500 sq feet house on a 2000 sq feet property: 395853$
-You can find the full source code and data file for this solution here.
+ruby example.rb
+Cost after 0 iterations = 53793539636.88498
+...
+Cost after 500 iterations = 10146181598.747213
+Цена - нормальное распределение: 10127426888.06452
+Цена - градиентный спуск: 10146181598.747213
+С помощью линейной регрессии предсказана цена продажи для дома с площадью участка 2000 кв. футов и жилой площадью 1500 кв.футов: $395853.
+С помощью градиентной линейной регрессии предсказана цена продажи для дома с площадью участка 2000 кв. футов и жилой площадью 1500 кв.футов: $398827.
 ```

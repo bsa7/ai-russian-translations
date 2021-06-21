@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'csv'
 require 'libsvm'
 
@@ -5,7 +7,7 @@ x_data = []
 y_data = []
 
 # Загружаем данные из CSV файла в два массива - один для независимой переменной X и один для зависимой переменной Y
-CSV.foreach('../common-data/admission.csv', headers: false) do |row|
+CSV.foreach('./source/common-data/admission.csv', headers: false) do |row|
   x_data.push([row[0].to_f, row[1].to_f])
   y_data.push(row[2].to_i)
 end

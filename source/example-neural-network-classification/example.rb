@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'csv'
 require 'ruby-fann'
 
 x_data = []
 y_data = []
 # Загружаем данные из CSV файла в два массива. Первый - независимые переменные X и второй массив - переменные Y, зависящие от X.
-CSV.foreach("../common-data/admission.csv", headers: false) do |row|
+CSV.foreach("./source/common-data/admission.csv", headers: false) do |row|
   x_data.push([row[0].to_f, row[1].to_f])
   y_data.push([row[2].to_i])
 end

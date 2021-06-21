@@ -6,7 +6,7 @@ y_data = []
 # Загружаем данные из CSV file в два массива - один для независимой переменной X и один для зависимой переменной Y
 # Каждая строка файла содержит площадь участка и жилую площадь:
 # [SQ_FEET_PROPERTY, SQ_FEET_HOUSE]
-file_name = './data/staten-island-single-family-home-sales-2015.csv'
+file_name = './source/example-linear-regression/data/staten-island-single-family-home-sales-2015.csv'
 CSV.foreach(file_name, headers: true) do |row|
   x_data.push([row[0].to_i, row[1].to_i])
   y_data.push(row[2].to_i)

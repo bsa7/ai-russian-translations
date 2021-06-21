@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'csv'
 require 'libsvm'
 
@@ -5,27 +7,27 @@ x_data = []
 y_data = []
 
 # Загружаем данные из CSV файла в два массива - один для независимой переменной X и один для зависимой переменной Y
-CSV.foreach('../common-data/admission.csv', headers: false) do |row|
-  x_data.push( [row[0].to_f, row[1].to_f] )
-  y_data.push( row[2].to_i )
+CSV.foreach('./source/common-data/admission.csv', headers: false) do |row|
+  x_data.push [row[0].to_f, row[1].to_f]
+  y_data.push row[2].to_i
 end
 
 # Разбиваем данные на наборы для обучения, проверки и тестирования
 validation_size_percentange = 15.0 # 15%
-validation_set_size = x_data.size * (validation_size_percentange/100.to_f)
+validation_set_size = x_data.size * validation_size_percentange / 100.to_f
 test_size_percentange = 15.0 # 20%
-test_set_size = x_data.size * (test_size_percentange/100.to_f)
-validation_x_data = x_data[0 .. (validation_set_size-1)]
-validation_y_data = y_data[0 .. (validation_set_size-1)]
-test_x_data = x_data[validation_set_size .. (validation_set_size+test_set_size-1)]
-test_y_data = y_data[validation_set_size .. (validation_set_size+test_set_size-1)]
-training_x_data = x_data[(validation_set_size+test_set_size) .. x_data.size]
-training_y_data = y_data[(validation_set_size+test_set_size) .. y_data.size]
+test_set_size = x_data.size * (test_size_percentange / 100.to_f)
+validation_x_data = x_data[0..(validation_set_size - 1)]
+validation_y_data = y_data[0..(validation_set_size - 1)]
+test_x_data = x_data[validation_set_size..(validation_set_size+test_set_size - 1)]
+test_y_data = y_data[validation_set_size..(validation_set_size+test_set_size - 1)]
+training_x_data = x_data[(validation_set_size + test_set_size)..x_data.size]
+training_y_data = y_data[(validation_set_size + test_set_size)..y_data.size]
 
 # Convert into proper feature arrays for Libsvm
-validation_x_data = validation_x_data.map {|feature_row| Libsvm::Node.features(feature_row) }
-test_x_data = test_x_data.map {|feature_row| Libsvm::Node.features(feature_row) }
-training_x_data = training_x_data.map {|feature_row| Libsvm::Node.features(feature_row) }
+validation_x_data = validation_x_data.map { |feature_row| Libsvm::Node.features(feature_row) }
+test_x_data = test_x_data.map { |feature_row| Libsvm::Node.features(feature_row) }
+training_x_data = training_x_data.map { |feature_row| Libsvm::Node.features(feature_row) }
 
 # Определяем нашу проблему, используя данные для обучения
 problem = Libsvm::Problem.new
